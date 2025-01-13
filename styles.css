@@ -1,0 +1,178 @@
+* {
+    overflow-x: hidden;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-y: hidden;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: rgba(13, 13, 13, 1);
+    ;
+    border-radius: .5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    accent-color: red;
+    margin-top: .3rem;
+    margin-bottom: .3rem;
+}
+
+/* For Firefox */
+input[type="range"]::-moz-range-track {
+    background: rgba(13, 13, 13, 1);
+
+}
+
+.Landing-Page {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(imgs/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.navbar {
+    z-index: 1;
+}
+
+.Landing-Content {
+    width: 100%;
+    height: 92%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.DivSh {
+    width: 40%;
+    margin-right: 10%;
+    border-radius: 2rem;
+    background-color: rgb(0 0 0 / 30%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.Forum {
+    height: 75%;
+    width: 80%;
+    margin: 10%;
+    border-radius: 2rem;
+    background: linear-gradient(to right,
+            rgb(13 13 13 / 100%) 0%,
+            rgb(13 13 13 / 95%) 25%,
+            rgb(13 13 13 / 0%) 40%,
+            rgb(13 13 13 / 0%) 60%,
+            rgb(13 13 13 / 95%) 75%,
+            rgb(13 13 13 / 100%) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    color: rgba(255, 255, 255, .8);
+    padding: 2%;
+}
+
+.Landing-Img::-webkit-scrollbar {
+    display: none;
+}
+
+.Landing-Img {
+    background-image: url(imgs/pc.png);
+    width: 30%;
+    height: 100%;
+    background-size: 95%;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+
+.Tab2 {
+    width: 100%;
+    height: 30vh;
+    background-color: black;
+}
+
+.GlassNav {
+    background-color: rgb(255 255 255 / 10%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    border-radius: .5rem;
+    margin: .3rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.GlassEffect {
+    background-color: rgb(0 0 0 / 30%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    border-radius: .5rem;
+    margin: .3rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.FlexContainer {
+    width: 100%;
+    display: inline-flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.BtnGlass {
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 3.5rem;
+    border-radius: .5rem;
+    width: 10rem;
+    height: 3.5rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.Neumor {
+    border-radius: 50px;
+    background: rgba(13, 13, 13, 0.9);
+    box-shadow: 10px 10px 20px #090909,
+        -10px -10px 20px #111111;
+
+
+}
+
+.HoverAnim {
+    transition: transform 0.15s ease-in-out;
+    cursor: pointer;
+    /* This defines the transition for transform */
+}
+
+.HoverAnim:hover {
+    transform: scale(1.2);
+    /* This applies the scaling effect */
+}
+
+.hidden {
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+}
+
