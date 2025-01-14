@@ -9,6 +9,10 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
       function handleAnimationEnd(event) {
         event.stopPropagation();
         element.classList.remove(`${prefix}animated`, animationName);
+        if(element.classList.contains("AddBlur")) {
+            element.classList.remove("Blur");
+            element.classList.add("Blur");
+        }
         resolve('Animation ended');
       }
   
@@ -39,6 +43,9 @@ const observer = new IntersectionObserver((entries) => {
                     }
                 });
             } 
+        }
+        if(entry.target.classList.contains("Blur") && !entry.isIntersecting) {
+            entry.target.classList.remove("Blur");
         }
     });
 });

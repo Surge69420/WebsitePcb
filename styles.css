@@ -73,13 +73,26 @@ input[type="range"]::-moz-range-track {
             rgb(13 13 13 / 0%) 60%,
             rgb(13 13 13 / 95%) 75%,
             rgb(13 13 13 / 100%) 100%);
-    backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 0, 0, 0.3);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     color: rgba(255, 255, 255, .8);
     padding: 2%;
+
 }
 
+.Blur {
+    backdrop-filter: Blur(10px);
+    animation: BlurAnim 1s ease-in-out;
+}
+@keyframes BlurAnim 
+{
+    0% {
+        backdrop-filter: blur(0px);
+    }
+    100% {
+        backdrop-filter: Blur(10px);
+    }
+}
 .Landing-Img::-webkit-scrollbar {
     display: none;
 }
