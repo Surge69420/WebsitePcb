@@ -11,6 +11,9 @@ h5,
 h6 {
     overflow-y: hidden;
 }
+body {
+    visibility: hidden;
+}
 
 input[type="range"]::-webkit-slider-runnable-track {
     background: rgba(13, 13, 13, 1);

@@ -1,24 +1,27 @@
 const animateCSS = (element, animation, prefix = 'animate__') =>
     // We create a Promise and return it
     new Promise((resolve, reject) => {
-      const animationName = `${prefix}${animation}`;
-  
-      element.classList.add(`${prefix}animated`, animationName);
-  
-      // When the animation ends, we clean the classes and resolve the Promise
-      function handleAnimationEnd(event) {
-        event.stopPropagation();
-        element.classList.remove(`${prefix}animated`, animationName);
-        if(element.classList.contains("AddBlur")) {
-            element.classList.remove("Blur");
-            element.classList.add("Blur");
-        }
-        resolve('Animation ended');
-      }
-  
-      element.addEventListener('animationend', handleAnimationEnd, {once: true});
-    });
+        const animationName = `${prefix}${animation}`;
 
+        element.classList.add(`${prefix}animated`, animationName);
+
+        // When the animation ends, we clean the classes and resolve the Promise
+        function handleAnimationEnd(event) {
+            event.stopPropagation();
+            element.classList.remove(`${prefix}animated`, animationName);
+            if (element.classList.contains("AddBlur")) {
+                element.classList.remove("Blur");
+                element.classList.add("Blur");
+            }
+            resolve('Animation ended');
+        }
+
+        element.addEventListener('animationend', handleAnimationEnd, { once: true });
+    });
+window.addEventListener('load', () => {
+    // Make the body content visible
+    document.body.style.visibility = 'visible';
+});
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -29,22 +32,21 @@ const observer = new IntersectionObserver((entries) => {
             } else {
                 entry.target.classList.remove('show');
             }
-        } else if (entry.target.classList.contains("animateOnScroll"))
-        {
+        } else if (entry.target.classList.contains("animateOnScroll")) {
             if (entry.isIntersecting) {
                 entry.target.classList.forEach((className) => {
                     if (className.startsWith('anim_')) {
                         const animationName = className.replace(/^anim_/, ''); // Extract the animation name after 'anim_'
                         console.log(animationName); // Logs the animation name, like 'fadeInLeftBig'
-                        
+
                         // Assuming animateCSS is a function that adds the animation classes
                         animateCSS(entry.target, animationName);
                         scrollTo(entry.target);
                     }
                 });
-            } 
+            }
         }
-        if(entry.target.classList.contains("Blur") && !entry.isIntersecting) {
+        if (entry.target.classList.contains("Blur") && !entry.isIntersecting) {
             entry.target.classList.remove("Blur");
         }
     });
